@@ -12,4 +12,5 @@ fi
 OPT="-n" # NO GUI
 veewee vbox build $OPT $T
 veewee vbox export $T
+veewee vbox destroy $T
 vagrant box add $T ./$T.box
