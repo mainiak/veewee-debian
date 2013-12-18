@@ -1,6 +1,15 @@
 #!/bin/sh
+#
+# see http://cbednarski.com/articles/veewee/
+#
+# gem install veewee
+#
+T="debian-base"
 set -ex
-if [ ! -d definitions/debian-base ]; then
-  veewee vbox define debian-base debian-7.2.0-amd64-netboot
+if [ ! -d definitions/$T ]; then
+  veewee vbox define $T debian-7.2.0-amd64-netboot
 fi
-veewee vbox build debian-base
+OPT="-n" # NO GUI
+veewee vbox build $OPT $T
+veewee vbox export $T
+vagrant box add $T ./$T.box
