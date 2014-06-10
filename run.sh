@@ -1,8 +1,11 @@
 #!/bin/sh
 #
-# see http://cbednarski.com/articles/veewee/
+# see:
+#   http://cbednarski.com/articles/veewee/
+#   https://github.com/jedi4ever/veewee/blob/master/doc/vagrant.md
 #
 # gem install veewee
+# veewee vbox templates | cut -f5 -d' ' | fgrep -i debian
 #
 T="debian-base"
 set -ex
